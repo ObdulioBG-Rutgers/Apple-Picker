@@ -3,11 +3,14 @@ using UnityEngine;
 public class SpawnZone : MonoBehaviour
 {
     public GameObject apple;
+    public GameObject bomb;
+    public GameObject golden_apple;
     private BoxCollider spawn_area;
+    private float time = 0f;
 
     void Start()
     {
-        //spawn_area = GetComponent<BoxCollider>();
+        spawn_area = GetComponent<BoxCollider>();
 
         //for (int index = 0; index < 20; index ++)
         //{
@@ -22,6 +25,13 @@ public class SpawnZone : MonoBehaviour
 
     void Update()
     {
+        time += Time.deltaTime;
+
+        if (time >= 1)
+        {
+            Debug.Log("1 Second!");
+            time = 0;
+        }
         
     }
 }
