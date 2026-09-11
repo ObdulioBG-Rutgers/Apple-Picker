@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Character
   - Apple
+  - Bomb
+  - Golden Apple
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - 
   - 
   - Character
-  - 
-  - 
+  - Basket
+  - Apple
   - 
   - 
   - 
