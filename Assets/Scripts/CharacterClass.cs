@@ -40,17 +40,4 @@ public class CharacterClass : MonoBehaviour
 
         transform.forward = Vector3.Slerp(transform.forward, velocity, rotate * Time.deltaTime);
     }
-
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(other.gameObject.name);
-        Debug.Log("HHHHHH");
-        GameObject collided_with = other.gameObject;
-
-        if (collided_with.tag == "Apple")
-        {
-            Debug.Log("Collided!");
-            Destroy(collided_with);
-        }
-    }
 }

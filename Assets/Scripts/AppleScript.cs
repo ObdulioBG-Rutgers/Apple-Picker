@@ -4,10 +4,11 @@ public class AppleScript : MonoBehaviour
 {
 
     public GameObject shadow;
+    private GameObject my_shadow;
 
     void Start()
     {
-        GameObject my_shadow = Instantiate<GameObject>(shadow);
+        my_shadow = Instantiate<GameObject>(shadow);
         my_shadow.transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
     }
 
@@ -15,5 +16,11 @@ public class AppleScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void on_destroy()
+    {
+        Destroy(my_shadow);
+        Destroy(gameObject);
     }
 }

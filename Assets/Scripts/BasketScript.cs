@@ -1,5 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasketScript : MonoBehaviour
@@ -18,7 +19,13 @@ public class BasketScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AAAA!!!!!!!!");
+        GameObject game_object = other.gameObject;
+
+        if (game_object.tag == "Apple")
+        {
+            AppleScript apple_script = game_object.GetComponent<AppleScript>();
+            apple_script.on_destroy();
+        }
     }
 
 
