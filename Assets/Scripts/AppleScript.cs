@@ -13,7 +13,6 @@ public class AppleScript : MonoBehaviour
         my_shadow.transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
     }
 
-    // Update is called once per frame
     void Update()
     {
         my_shadow.transform.localScale = Vector3.Lerp(my_shadow.transform.localScale, target_scale, Time.deltaTime * 1);
@@ -23,5 +22,15 @@ public class AppleScript : MonoBehaviour
     {
         Destroy(my_shadow);
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject game_object = collision.gameObject;
+
+        if (game_object.tag == "Ground")
+        {
+            on_destroy();
+        }
     }
 }
