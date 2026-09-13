@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 237537893}
   m_Layer: 0
   m_Name: Play Box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1646,7 +1646,7 @@ GameObject:
   - component: {fileID: 813783630}
   - component: {fileID: 813783627}
   - component: {fileID: 813783626}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Spawn Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3063,15 +3063,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846368945}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.9999998, z: -0, w: 0.0005899369}
+  m_LocalPosition: {x: -5.704499, y: 0, z: -0.19426388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2127746965}
   - {fileID: 1882920367}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.932, z: 0}
 --- !u!114 &1846368947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3269,10 +3269,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12343
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -3349,6 +3349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e139d88bc502e4349b392e48428c7a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  score: 0
+  lives: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ TagManager:
   - Apple
   - Bomb
   - Golden Apple
+  - Ground
+  - Shadow
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Character
   - Basket
   - Apple
-  - 
+  - Spawn Zone
   - 
   - 
   - 
