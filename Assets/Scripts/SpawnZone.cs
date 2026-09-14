@@ -1,8 +1,12 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnZone : MonoBehaviour
 {
+    public GameObject time_label;
+    private TMP_Text time_text;
+
     private bool in_play = false;
     public GameObject apple;
     public GameObject bomb;
@@ -17,6 +21,8 @@ public class SpawnZone : MonoBehaviour
     void Start()
     {
         spawn_area = GetComponent<BoxCollider>();
+
+        time_text = time_label.GetComponent<TMP_Text>();
 
         in_play = true;
     }
@@ -60,6 +66,8 @@ public class SpawnZone : MonoBehaviour
             countdown -= time;
             time = 0;
         }
+
+        time_text.text = "Time : " + countdown.ToString("F0");
         
     }
 }
