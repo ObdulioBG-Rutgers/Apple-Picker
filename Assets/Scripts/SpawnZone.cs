@@ -7,6 +7,12 @@ public class SpawnZone : MonoBehaviour
     public GameObject time_label;
     private TMP_Text time_text;
 
+    public GameObject end_screen;
+    private TMP_Text end_text;
+
+    public GameObject basket;
+    private BasketScript basket_script;
+
     private bool in_play = false;
     public GameObject apple;
     public GameObject bomb;
@@ -21,19 +27,25 @@ public class SpawnZone : MonoBehaviour
     void Start()
     {
         spawn_area = GetComponent<BoxCollider>();
+        basket_script = basket.GetComponent<BasketScript>();
 
         time_text = time_label.GetComponent<TMP_Text>();
+
+        end_text = end_screen.GetComponent<TMP_Text>();
 
         in_play = true;
     }
 
     void Update()
     {
-        if (countdown <= 0)
+        time_text.text = "Time : " + countdown.ToString("F0");
+
+        if (countdown <= 0 || basket_script.lives <= 0 ) 
         {
             in_play = false;
             
-            // END SCRENE HERE <-----
+            end_screen.SetActive(true);
+            end_text.text = "Final Score: " + (basket_script.score * basket_script.lives).ToString();
         }
 
         if (!in_play) return;
@@ -42,6 +54,13 @@ public class SpawnZone : MonoBehaviour
 
         if (time >= 1)
         {
+            if (countdown <= 4)
+            {
+                countdown -= time;
+                time = 0;
+                return;
+            }
+
             float rand_chance = Random.Range(1, 10);
             GameObject random_apple;
 
@@ -66,8 +85,6 @@ public class SpawnZone : MonoBehaviour
             countdown -= time;
             time = 0;
         }
-
-        time_text.text = "Time : " + countdown.ToString("F0");
         
     }
 }
